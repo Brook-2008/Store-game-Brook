@@ -50,12 +50,10 @@ const scenes = {
     choices: [
       {
         text: "Ask about the dog",
-        // add an action here related to inventory
         nextScene: "backyard"
       },
          {
         text: "Ask about the neighbor",
-        // add an action here related to inventory
         nextScene: "hallway"
       }
     ]
@@ -67,7 +65,6 @@ const scenes = {
     choices: [
       {
         text: "backyard",
-        // add an action here related to health
         nextScene: "lockedDoor"
       }
     ]
@@ -79,8 +76,11 @@ const scenes = {
     choices: [
       {
         text: "Try to open it",
-        // add an action here related to opening the door
         action: unlockDoor
+      },
+      {
+        text: "Go back",
+        nextScene: "backyard"
       }
     ]
   },
