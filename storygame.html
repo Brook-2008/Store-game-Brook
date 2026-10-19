@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Escape the School</title>
+</head>
+
+<body>
+
+<h1 id="title">Escape the School</h1>
+
+<img id="image" src="school.png" width="400">
+
+<p id="story">
+You are stuck inside the school. Find a way to escape.
+</p>
+
+<form>
+<input id="choice1" type="button" value="Search the desk">
+<input id="choice2" type="button" value="Check the backpack">
+</form>
+
+<script>
+
+let hasKey = false;
+let points = 0;
+
+document.getElementById("choice1").onclick = classroom;
+document.getElementById("choice2").onclick = lose;
+
+function classroom() {
+    hasKey = true;
+    points = 1;
+
+    document.getElementById("image").src = "hallway.png";
+    document.getElementById("title").innerHTML = "Hallway";
+    document.getElementById("story").innerHTML =
+    "You found a key. The main doors are locked.";
+
+    document.getElementById("choice1").value = "Go to the office";
+    document.getElementById("choice2").value = "Try the main doors";
+
+    document.getElementById("choice1").onclick = office;
+    document.getElementById("choice2").onclick = lose;
+}
+
+function office() {
+    document.getElementById("image").src = "office.png";
+    document.getElementById("title").innerHTML = "Office";
+    document.getElementById("story").innerHTML =
+    "You find a note saying there is an exit in the gym.";
+
+    document.getElementById("choice1").value = "Go to the gym";
+    document.getElementById("choice2").value = "Ignore the note";
+
+    document.getElementById("choice1").onclick = gym;
+    document.getElementById("choice2").onclick = lose;
+}
+
+function gym() {
+    if (hasKey == true) {
+        document.getElementById("image").src = "gym.png";
+        document.getElementById("title").innerHTML = "You Escaped!";
+        document.getElementById("story").innerHTML =
+        "You use the key and escape the school!";
+
+        document.getElementById("choice1").value = "Play Again";
+        document.getElementById("choice2").style.display = "none";
+
+        document.getElementById("choice1").onclick = start;
+    }
+}
+function lose() {
+    document.getElementById("image").src = "classroom.png";
+    document.getElementById("title").innerHTML = "Game Over";
+    document.getElementById("story").innerHTML =
+    "Wrong choice. You are still trapped.";
+
+    document.getElementById("choice1").value = "Try Again";
+    document.getElementById("choice2").style.display = "none";
+
+    document.getElementById("choice1").onclick = start;
+}
+
+function start() {
+    location.reload();
+}
+
+</script>
+
+</body>
+</html>
+
+
 
