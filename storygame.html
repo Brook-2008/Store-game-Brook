@@ -2,23 +2,32 @@
 <html>
 
 <head>
-    <title>Escape the School</title>
+    <title>Escape The School</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<h1 id="title">Escape the School</h1>
+<div class="card">
 
-<img id="image" src="school.png" width="400">
+    <h1 class="heading" id="title">Escape the School</h1>
 
-<p id="story">
-You are stuck inside the school. Find a way to escape.
-</p>
+    <img class="game-image" id="image" src="school.png" width="400">
 
-<form>
-<input id="choice1" type="button" value="Search the desk">
-<input id="choice2" type="button" value="Check the backpack">
-</form>
+    <p class="story" id="story">
+        You are stuck inside the school. Find a way to escape.
+    </p>
+
+    <form>
+        <input class="choice" id="choice1" type="button" value="Search the desk">
+        <input class="choice" id="choice2" type="button" value="Check the backpack">
+    </form>
+
+</div>
 
 <script>
 
@@ -70,6 +79,7 @@ function gym() {
         document.getElementById("choice1").onclick = start;
     }
 }
+
 function lose() {
     document.getElementById("image").src = "classroom.png";
     document.getElementById("title").innerHTML = "Game Over";
@@ -90,6 +100,3 @@ function start() {
 
 </body>
 </html>
-
-
-
